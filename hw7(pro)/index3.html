@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/hw7(pro)/script.js"></script>
+</head>
+<body>
+    <script>
+        function delSymbols(){
+            let output ="";
+            for (let i = 0; i < arguments[0].length; i++){
+                if (arguments[0][i].includes(arguments[1][0])){
+                    output += ""
+                }
+                else if (arguments[0][i].includes(arguments[1][1])){
+                    output += ""
+                }
+                else{
+                    output += arguments[0][i]
+                }
+            }
+            alert(output);
+        }
+        delSymbols("hello world",['l','d']);
+    </script>
+</body>
+</html>

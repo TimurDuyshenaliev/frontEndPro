@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 6</title>
+</head>
+<body>
+    <script>
+        let arrayNumber = [];
+        function showNumber(){
+            for(let i = 0;i<10;i++){
+                let number = prompt("Enter number",);
+                if(number === null){
+                    console.log(arrayNumber.at(-1));
+                    return;
+                }
+                if(number < 100){
+                    arrayNumber.push(number);
+                }
+                if(number > 100){
+                    console.log(number);
+                    break;
+                }
+                if(isFinite(number)==false){
+                    console.log(arrayNumber.at(-1));
+                    break;
+                }
+            }
+        }
+        showNumber();
+    </script>
+</body>
+</html>
+<script>
+    
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //number
+        const cat = 887;
+        console.log(cat);
+        console.log(typeof cat);
+
+        console.log('-----------------');
+        //string
+        const color = 'green';
+        console.log(color);
+        console.log(typeof color);
+
+        console.log('-----------------');
+        //bigInt
+        let num = 7007999595001n;
+        console.log(num);
+        console.log(typeof num);
+
+        console.log('-----------------');
+        //boolean
+        const crimeaIsUkraine = true;
+        console.log('Crimea Is Ukraine',crimeaIsUkraine);
+        console.log(typeof crimeaIsUkraine);
+
+        const russiansAreClever = false;
+        console.log('russians are clever',russiansAreClever);
+        console.log(typeof crimeaIsUkraine);
+
+        console.log('-----------------');
+        //undefined & null
+        let paper;
+        console.log(paper);
+        console.log(typeof paper);
+        paper = null;
+        console.log(paper);
+        console.log(typeof paper);
+
+        console.log('-----------------');
+        //object
+        let car = {
+            brand:'nissan',
+            model:'skyline',
+            mod:'r34',
+            color:'blue'
+        };
+        console.log(car);
+        console.log(car.brand);
+        console.log(typeof car);
+        console.log(typeof car.brand);
+
+        console.log('-----------------');
+        //symbol
+        const symbol = Symbol('foo');
+        const symbol2 =Symbol('yuo');
+        console.log(symbol);
+        console.log(typeof symbol);
+        console.log(symbol === symbol2);
+
+        console.log('-----------------');
+        //array
+
+        let deskSetup = ['pc','display','keyboard','mouse','mousepad'];
+        console.log(deskSetup);
+        console.log(typeof deskSetup);
+    </script>
+</body>
+</html>
