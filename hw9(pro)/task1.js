@@ -2,9 +2,9 @@ const btn = document.getElementById('btn');
 let color = function (event){
     const block = document.getElementById('text');
     
-    if(text.style.color){
-        text.style.color = '';
+    if(block.style.color){
+        block.style.color = '';
     }
-    else text.style.color = 'blue';
+    else block.style.color = 'blue';
 }
 btn.addEventListener('click', color)    
