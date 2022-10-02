@@ -14,9 +14,6 @@
                 this.showPerson = function(){
                     console.log(this);
                 }
-                this.getCar = function(){
-                    return this;
-                }
             }
             function Car(brand = prompt("Введите марку"), model = prompt("Введите модель"), color = prompt("Введите цвет")){
                 this.brand = brand;
@@ -25,12 +22,16 @@
                 this.showCar = function(){
                     console.log(this);
                 }
-                this.owner = user.getCar();
+                this.setOwner = function (owner) {
+                    if (owner instanceof Person) {
+                        this.owner = owner
+                    }
+                };
             }
-            let user =new Person();
+            let user = new Person();
             let car = new Car();
             user.showPerson();
-            user.getCar();
+            car.setOwner(user);
             car.showCar();
     </script>
 </body>
