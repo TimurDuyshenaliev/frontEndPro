@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/hw11(pro)/task1/reset.css">
+    <link rel="stylesheet" href="/hw11(pro)/task2/style.css">
+</head>
+<body>
+    <section class="billing">
+        <div class="container">
+            <div class="billing-form">
+                <div class="billing-form__card js--card">
+                    <img class="billing-form__card__image-holo" src="/hw11(pro)/task2/images/holo.png" alt="">
+                    <img class="billing-form__card__image-visa" src="/hw11(pro)/task2/images/visa.png" alt="visa">
+                    <div class="billing-form__card__number">
+                        <p class="js--card-number" id="card-number" >#### #### #### ####</p>
+                    </div>
+                    <div class="billing-form__card__name">
+                        <p class="card-text js--card-holder">Card Holder</p>
+                        <p class="card-text_user js--card-name" id="card-name">AD SOYAD</p>
+                    </div>
+                    <div class="billing-form__card__date">
+                        <p class="card-text">Expires</p>
+                        <p class="card-text_user js--card-date" id="card-date">04/22</p>
+                    </div>
+                </div>
+                <div class="billing-form__forms">
+                    <form action="#" class="billing-form__forms-m js--form" id="form">
+                        <div class="forms-number">
+                            <label for="number">Card Number</label>
+                            <input class="js--form__input" type="text" name="number" id="input_number">
+                        </div>
+                        <div class="forms-name">
+                            <label for="name">Card Name</label>
+                            <input class="js--form__input" type="text" name="name" id="input_name">
+                        </div>
+                        <div class="forms-date-cvv">
+                            <div class="forms-date">
+                                <label for="date">Expiration Date</label>
+                                <br>
+                                <input class="js--form__input" type="text" name="date date-m"id="input_date">
+                            </div>
+                            <div class="forms-cvv">
+                                <label for="cvv">CVV</label>
+                                <br>
+                                <input class="js--form__input" type="text" name="cvv" id="card-cvv">
+                            </div>
+                        </div>
+                        
+                        <button class="forms-btn js--btn_sub" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/hw11(pro)/task2/script.js"></script>
+</body>
+
+</html>

@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded',function(){
     function FormData(input, card){
-        this.input = document.getElementById(input);
+        this.input = document.querySelector(input);
         this.card = document.querySelector(card);
-        this.changeItem = (event)=>{
-            event.preventDefault();
-            const cardName = document.querySelector('js--card-name');
-            const cardNumber = document.querySelector('js--card-number');
-            const date = document.querySelector('js--card-date');
-            if (cardName.value.length == 0) {
-                document.querySelector('js--card-name').innerHTML = 'John Doe';
-              } else {
-                document.querySelector('js--card-name').innerHTML = this.input.value;
-              }
+        this.updateValueNum = function(e){
+            const cardNumber = document.getElementById('card-number');
+            cardNumber.textContent = e.target.value;
+        }
+        this.updateValueName =function(e) {
+            const cardName = document.getElementById('card-name');
+            cardName.textContent = e.target.value;
+        }
+        this.updateValueDate =function(e) {
+            const cardDate = document.getElementById('card-date');
+            cardDate.textContent = e.target.value;
         }
         this.getValues = (event)=>{
             event.preventDefault();
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded',function(){
         }
     }
     const formData = new FormData('js--form__input','js-card');
-    // document.querySelector('js--form').addEventListener('input', formData.changeItem);
     document.querySelector('.js--form').addEventListener('submit', formData.getValues);
+    document.getElementById('input_name').addEventListener('change', formData.updateValueName);
+    document.getElementById('input_number').addEventListener('change', formData.updateValueNum);
+    document.getElementById('input_date').addEventListener('change', formData.updateValueDate);      
 })

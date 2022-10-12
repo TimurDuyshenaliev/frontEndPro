@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    background-color: rgb(203, 225, 255);
+}
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.billing-form{
+    width: 500px;
+    height: 600px;
+    margin-top: 100px;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    -webkit-box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    -moz-box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.billing-form__card{
+    width: 350px;
+    height: 210px;
+    background-image: url('/hw11(pro)/task2/images/card_bg.jpeg');
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    -moz-box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    box-shadow: 3px 3px 53px 3px rgba(201,201,201,1);
+    transform: translateY(-60px);
+    display: grid;
+    grid-template-areas:"img_holo img_visa"
+                        "card_number card_number"
+                        "card_name card_date";
+    padding: 20px;
+
+}
+.billing-form__forms-m{
+    width: 100%;
+}
+.billing-form__card__image-holo{
+    width: 60px;
+    height: 75px;
+    grid-area: img_holo;
+    transform: translateY(-17px);
+}
+.billing-form__card__image-visa{
+    width: 90px;
+    grid-area: img_visa;
+    justify-self: end;
+}
+.billing-form__card__number{
+    grid-area: card_number;
+    justify-self: center;
+    transform: translateY(-15px);
+}
+.billing-form__card__number p{
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+}
+.billing-form__card__name{
+    grid-area: card_name;
+}
+.card-text{
+    color: rgb(212, 212, 212);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.card-text_user{
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.billing-form__card__date{
+    grid-area: card_date;
+    justify-self: end;
+}
+.forms-number{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.forms-name{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.forms-date-cvv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+label{
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #3f4150;
+}
+.forms-number input{
+    width: 98%;
+    font-size: 1.5rem;
+    border: 2px #e8e8ea solid;
+    border-radius: 3px;
+}
+.forms-name input{
+    width: 98%;
+    font-size: 1.5rem;
+    border: 2px #e8e8ea solid;
+    border-radius: 3px;
+}
+.forms-date{
+    margin-right: 15px;
+}
+.forms-date input{
+    width: 130px;
+    font-size: 1.5rem;
+    border: 2px #e8e8ea solid;
+    border-radius: 3px;
+}
+.forms-cvv input{
+    width: 100px;
+    font-size: 1.5rem;
+    border: 2px #e8e8ea solid;
+    border-radius: 3px;
+}
+.forms-btn{
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: inherit;
+    background-color: #5111d5;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 400;
+}
