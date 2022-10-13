@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded',function(){
                 this._next.classList.add('slider__next-disable');            
             }
         };
-        return console.log(Slider);
+        return console.log(this);
     }
     const slider = new Slider('.js--slider__prev','.js--slider__next','.js--list');
-    console.log(slider(this.length, this.changeItem));
 
     slider._next.addEventListener('click', function () {
         const activeItem = slider._list.querySelector('.active');
