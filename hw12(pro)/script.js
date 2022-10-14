@@ -5,38 +5,38 @@ document.addEventListener('DOMContentLoaded',function(){
         const _list = document.querySelector(list);
         this.length = _list.getElementsByTagName('li').length;
         this.changeItem = function ({ active, _newElement }) {
+            
             if (_newElement) {
                 active.classList.remove('active');
                 _newElement.classList.add('active');
             }
+            
         };
+
         
-        function disableButton(){
-            let activeItem = 1;
+        let disableButton = function(){
+            let activeSlide = 1;
             _prev.addEventListener('click', function(){
-                activeItem--;
-                if(activeItem == 1){
-                    _prev.classList.add('.disable')
+                activeSlide--;
+                _next.classList.remove('disable');
+                if(activeSlide === 1){
+                    _prev.classList.add('disable')
                 }
-            })
-            _next.addEventListener('click', function(){
-                activeItem++;
-                if(activeItem == this.length -1){
-                    _prev.classList.add('.disable')
+            });
+            _next.addEventListener('click', function(){ 
+                activeSlide++;
+                _prev.classList.remove('disable');
+                if(activeSlide === _list.getElementsByTagName('li').length){
+                    _next.classList.add('disable');
                 }
-            })
-            console.log(activeItem);
+            });
         }
-        disableButton();
+        disableButton();    
         
-
-
-
         return console.log(this);
 
     }
     const slider = new Slider('.js--slider__prev','.js--slider__next','.js--list');
-
     document.querySelector('.js--slider__next').addEventListener('click', function () {
         const activeItem = document.querySelector('.js--list').querySelector('.active');
         slider.changeItem({
@@ -52,4 +52,5 @@ document.addEventListener('DOMContentLoaded',function(){
             _newElement: activeItem.previousElementSibling
         });
     })
+    
 })  
