@@ -16,6 +16,7 @@
 }
 .disable{
     background-color: grey;
+    z-index: -1;
 }
 .slider ul {
     display: flex;

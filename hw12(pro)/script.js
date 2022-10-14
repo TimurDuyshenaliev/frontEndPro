@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded',function(){
             _prev.addEventListener('click', function(){
                 activeSlide--;
                 _next.classList.remove('disable');
-                if(activeSlide === 1){
+                if(activeSlide == 1){
                     _prev.classList.add('disable')
                 }
             });
             _next.addEventListener('click', function(){ 
                 activeSlide++;
                 _prev.classList.remove('disable');
-                if(activeSlide === _list.getElementsByTagName('li').length){
+                if(activeSlide == _list.getElementsByTagName('li').length){
                     _next.classList.add('disable');
                 }
             });
