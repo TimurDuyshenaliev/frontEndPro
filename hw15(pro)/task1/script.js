@@ -61,16 +61,13 @@ document.addEventListener('DOMContentLoaded',function(){
         }
         paginationElement.innerHTML = paginationHTML.join('');
         let currentIndex = document.querySelector('.slider_pagination_btn').dataset.index;
-        console.log(currentIndex);
         paginationElement.childNodes[currentIndex].classList.add('selected');
-        let disableButton = function(activeSlide){
+        let paginationButton = function(activeSlide){
             _prev.addEventListener('click', function(){
-                if(activeSlide >= 1){
+                if(activeSlide > 1){
                     activeSlide--;
                     currentIndex--;
                 }
-                console.log(activeSlide);
-                console.log(currentIndex);
                 if(activeSlide === currentIndex+1){
                     paginationElement.childNodes[currentIndex].classList.add('selected');
                     paginationElement.childNodes[currentIndex+1].classList.remove('selected');
@@ -90,10 +87,9 @@ document.addEventListener('DOMContentLoaded',function(){
             });
              
         }
-        disableButton(1);
+        paginationButton(1);
     }
     const slider = new Slider('.js--slider__prev','.js--slider__next','.js--list');
     const sliderPagination = new SliderPagination('.js--slider__prev','.js--slider__next','.js--slider_pagination');
     sliderPagination.__proto__ =  slider;
-    console.log(sliderPagination);
 });
