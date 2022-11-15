@@ -5,20 +5,25 @@ document.addEventListener("DOMContentLoaded", function(){
         event.preventDefault()
         let value = input.value;
         input.value = "";
-        if(value > 0 && value <= 10){
+        if(value > 0 && value <= 100){
             fetch(`https://jsonplaceholder.typicode.com/posts/${value}`)
             .then((response) => response.json())
-            .then((json) => document.querySelector(".post").insertAdjacentHTML("afterbegin",`<br>`+ json.body + `<br>`))
-            .then(document.querySelector(".btn-comm").addEventListener("click",function(){
-                fetch(`https://jsonplaceholder.typicode.com/posts/${value}/comments`)
-                .then((response) => response.json())
-                .then((json) => {
-                    for( let i = 0; i < 5; i++){
-                        document.querySelector(".post_comment").insertAdjacentHTML("afterbegin",`<br>`+ json[i].body + `<br>`);
-                    }
-                    
-                })
-            }))
+            .then((json) => {
+                if(json.body){
+                    document.querySelector(".post").insertAdjacentHTML("afterbegin",`<br>`+ json.body + `<br>`);
+                    document.querySelector(".btn-comm").addEventListener("click",function(){
+                        fetch(`https://jsonplaceholder.typicode.com/posts/${value}/comments`)
+                        .then((response) => response.json())
+                        .then((json) => {
+                            for( let i = 0; i < 5; i++){
+                                document.querySelector(".post_comment").insertAdjacentHTML("afterbegin",`<br>`+ json[i].body + `<br>`);
+                            }
+                        })
+                    })
+                }
+            })
+        } else {
+            document.location.reload();
         }
         
     });
