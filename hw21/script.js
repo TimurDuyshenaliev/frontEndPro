@@ -5,25 +5,21 @@ document.addEventListener("DOMContentLoaded", function(){
         event.preventDefault()
         let value = input.value;
         input.value = "";
-        if(value > 0 && value <= 10){
-            fetch(`https://jsonplaceholder.typicode.com/posts/${value}`)
-            .then((response) => response.json())
-            .then((json) => document.querySelector(".post").insertAdjacentHTML("afterbegin",`<br>`+ json.body + `<br>`))
-            
-        }
-        document.querySelector(".btn-comm").addEventListener("click",await function(){
-                fetch(`https://jsonplaceholder.typicode.com/posts/${value}/comments`)
-                .then((response) => response.json())
-                .then((json) => {
+        if(value > 0 && value <= 100){
+            let responcePost = await fetch(`https://jsonplaceholder.typicode.com/posts/${value}`);
+            let json = await responcePost.json();
+            if(json.body){
+                document.querySelector(".post").insertAdjacentHTML("afterbegin",`<br>`+ json.body + `<br>`);
+                document.querySelector(".btn-comm").addEventListener("click",async function(){
+                    let responceComment = await fetch(`https://jsonplaceholder.typicode.com/posts/${value}/comments`)
+                    let json = await responceComment.json()
                     for( let i = 0; i < 5; i++){
                         document.querySelector(".post_comment").insertAdjacentHTML("afterbegin",`<br>`+ json[i].body + `<br>`);
                     }
                 })
-            })
+            }        
+        } else {
+            document.location.reload();
+        }
     });
 })
-// 
-
-
-
-            
