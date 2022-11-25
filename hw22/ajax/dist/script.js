@@ -5,17 +5,8 @@ $(function () {
     url: "http://api.openweathermap.org/data/2.5/weather?q=LVIV&units=metric&APPID=5d066958a60d315387d9492393935c19",
     type: "GET",
     dataType: "jsonp",
-    success: function success(data) {
-      showInfo(data);
+    success: function success(e) {
+      e = e, $(".icon").html("<img src=\"https://openweathermap.org/img/w/".concat(e.weather[0].icon, ".png\">")), $(".city").text("" + e.name), $(".temp").text("temp: " + e.main.temp), $(".desc").text("" + e.weather[0].main), $(".pressure").text("pressure: " + e.main.pressure), $(".humidity").text("humidity: " + e.main.humidity), $(".wind").text("wind speed: ".concat(e.wind.speed, ", wind deg: ") + e.wind.deg);
     }
   });
-  function showInfo(data) {
-    $(".icon").html("<img src=\"https://openweathermap.org/img/w/".concat(data.weather[0].icon, ".png\">"));
-    $(".city").text("".concat(data.name));
-    $(".temp").text("temp: ".concat(data.main.temp));
-    $(".desc").text("".concat(data.weather[0].main));
-    $(".pressure").text("pressure: ".concat(data.main.pressure));
-    $(".humidity").text("humidity: ".concat(data.main.humidity));
-    $(".wind").text("wind speed: ".concat(data.wind.speed, ", wind deg: ").concat(data.wind.deg));
-  }
 });
