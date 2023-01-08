@@ -1,51 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Component } from 'react';
-
-function CreateNewStack(state) {
-  const {value} = state;
-  return(
-    <div>{value}</div>
-  )
-}
+import { useState } from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-class StackForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-  }
-  addStack(event){
+
+function AddStack(event){
+  const [state, setState] = useState('');
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      value: this.state.value + ' ' + event.target[0].value
-  }, () => event.target[0].value = '')
+    setState(
+      {
+      value: [state.value] + ' ' + event.target[0].value
+      },
+      event.target[0].value = '');
   }
   
-  componentDidMount() {
-    console.log('componentDidMount');
-    this.setState({value: ''})
-}
-
-  render() {
-    const {value} = this.state;
-    return(
+  return(
     <>
       <div className="App">
         <p>Timur</p>
         <p>Duishenaliev</p>
         <p>Stack: </p>
+        <div>{state.value}</div>
       </div>
-      
-      <CreateNewStack value = {value}/>
-      <form action="#" onSubmit={this.addStack.bind(this)}>
-        <input type="text" />
+      <form action="#" onSubmit={handleSubmit}>
+        <input type="text"/>
           <button>Добавить</button>
       </form>
       </>)
-  }
 }
 
+export default AddStack;
+
 root.render(
-  <StackForm />
-  )
+  <AddStack/>
+)
