@@ -11,7 +11,8 @@ function AddStack(){
     event.preventDefault();
     setState(
       state + ' ' + event.target[0].value,
-      event.target[0].value = '');
+    );
+    event.target[0].value = '';
   }
   
   return(
