@@ -4,15 +4,13 @@ import { useState } from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function AddStack(event){
+function AddStack(){
   const [state, setState] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setState(
-      {
-      value: [state.value] + ' ' + event.target[0].value
-      },
+      state + ' ' + event.target[0].value,
       event.target[0].value = '');
   }
   
@@ -22,7 +20,7 @@ function AddStack(event){
         <p>Timur</p>
         <p>Duishenaliev</p>
         <p>Stack: </p>
-        <div>{state.value}</div>
+        <div>{state}</div>
       </div>
       <form action="#" onSubmit={handleSubmit}>
         <input type="text"/>
