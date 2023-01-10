@@ -31,8 +31,9 @@ class StackForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState({
-      stack: this.state.stack + ' ' + event.target[0].value
-      },() => event.target[0].value = '');
+      stack: this.state.stack + ' ' + event.target[0].value,
+      value: ''
+      })
   }
   
   render(){
